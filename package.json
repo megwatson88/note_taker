@@ -1,27 +1,17 @@
 {
-  "name": "note-taker",
+  "name": "routes",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "apiRoutes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "^0.0.1-security",
-    "inquirer": "^8.1.5",
     "uuid": "^8.3.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/megwatson88/note_taker.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/megwatson88/note_taker/issues"
-  },
-  "homepage": "https://github.com/megwatson88/note_taker#readme"
+  }
 }
