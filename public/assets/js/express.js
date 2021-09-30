@@ -14,10 +14,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 app.use('/api', apiRoutes);
 app.use('/', html)
-
-
-
-
+//where to set the port 
 app.listen(3001, () => {
    // console.log(`API server on port 3001!`)
 });
