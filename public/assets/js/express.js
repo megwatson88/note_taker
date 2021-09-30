@@ -2,15 +2,23 @@
 const express = require('express');
 const apiRoutes = require('public/routes/app-routes.js')
 const htmlRoutes = require('public/routes/html.js')
-
-const app = express();
 const fs = require('fs');
 const path = require('path');
-//Initalizing app 
-
+//setting up app and port 
+const app = express();
 var port = PORT(process.env.PORT || '3001');
-app.set('port', port);
+
+//Initalizing app uses the app.use
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+app.use(express.static('public'));
+app.use('/api', apiRoutes);
+app.use('/', html)
+
+
+
+
 app.listen(3001, () => {
-    console.log(`API server on port 3001!`)
+   // console.log(`API server on port 3001!`)
 });
 

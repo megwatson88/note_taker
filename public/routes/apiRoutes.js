@@ -2,7 +2,7 @@ const router = require('express').Router();
 const store = require('../db.store');
 
 //adding notes
-router.get('.public/notes.html', function(req, res) => {
+router.get('.public/notes.html', function(req, res) {
     store
         .getNotes()
         .then(notes => res.json(notes))
@@ -10,7 +10,7 @@ router.get('.public/notes.html', function(req, res) => {
 });
 //posting notes 
 
-router.post('public/notes.html' , function(req, res) => {
+router.post('public/notes.html' , function(req, res) {
     store  
         .addNotes(req.body)
         .then((notes)=> res.json(notes))
@@ -19,10 +19,10 @@ router.post('public/notes.html' , function(req, res) => {
 
 //delete 
 
-router.delete('public/notes.html', function(req, res)=>{
+router.delete('public/notes.html', function(req, res) {
     store
     .removeNotes(req.params.id)
-    .then(()=> res.json.({ok: true }))
+    .then(()=> res.json({ok: true }))
     .catch(err => res.status(500).json(err));
 });
 module.exports = router;
