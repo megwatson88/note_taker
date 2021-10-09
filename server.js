@@ -1,7 +1,7 @@
 //settin API rroutes
 const express = require('express');
-const apiRoutes = require('public/routes/app-routes.js')
-const htmlRoutes = require('public/routes/html.js')
+const apiRoutes = require('routes/apiRoutes.js');
+const htmlRoutes = require('public/routes/html.js');
 
 
 //setting up app and port 
@@ -15,7 +15,7 @@ app.use(express.static('public'));
 
 //setting up routes
 app.use('/api', apiRoutes);
-app.use('/', html)
+app.use('/', htmlRoutes);
 //where to set the port 
 app.listen(3001, () => {
     console.log(`API server on port ${PORT} !`)
