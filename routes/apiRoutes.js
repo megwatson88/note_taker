@@ -17,7 +17,7 @@ const writeDB = () => {
 }
 
 //adding notes
-router.get('.public/notes.html', function(req, res) {
+router.get('/notes', (req, res)  => {
     store
         .getNotes()
         .then(notes => res.json(notes))
@@ -25,16 +25,16 @@ router.get('.public/notes.html', function(req, res) {
 });
 //posting notes 
 
-router.post('public/notes.html' , function(req, res) {
+router.post('/notes' , (req, res) => {
     store  
         .addNotes(req.body)
         .then((notes)=> res.json(notes))
         .catch(err => res.staus(500).json(err));
 });
 
-//delete 
+//delete bonus 
 
-router.delete('public/notes.html', function(req, res) {
+router.delete('/notes/:id', (req, res) => {
     store
     .removeNotes(req.params.id)
     .then(()=> res.json({ok: true }))
