@@ -1,12 +1,12 @@
 //settin API rroutes
 const express = require('express');
-const apiRoutes = require('routes/apiRoutes.js');
-const htmlRoutes = require('public/routes/html.js');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/html');
 
 
 //setting up app and port 
 const app = express();
-const PORT = PORT(process.env.PORT || '3001');
+const PORT = process.env.PORT || '3001';
 
 //Initalizing app uses the app.use
 app.use(express.json());
